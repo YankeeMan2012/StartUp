@@ -1,0 +1,66 @@
+header, footer, .viewContent {
+	transition: transform .3s linear;
+}
+
+.openMenu {
+	overflow: hidden;
+	header, footer, .viewContent {
+		transform: translateX(360px);
+	}
+	.overlay {
+		display: block;
+	}
+	.menuList {
+		transform: translateX(0);
+	}
+}
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(#000, .5);
+	z-index: 50;
+}
+.menuList {
+	transform: translateX(-360px);
+	transition: transform .3s linear;
+	z-index: 60;
+	display: block;
+	font-family: "SegoeUIRegular", sans-serif;
+	font-size: 16px;
+	position: fixed;
+	width: 360px;
+	box-sizing: border-box;
+	padding: 40px 0;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	background: #fff;
+	li {
+		padding: 10px 20px;
+		cursor: pointer;
+		color: $darkFont;
+		border-bottom: 1px solid #e2e2e2;
+		&.active {
+			font-family: "SegoeUISemiBold", sans-serif;
+			color: $mainBlue;
+		}
+	}
+	.openingMenu {
+		padding-right: 30px;
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 14px;
+			right: 10px;
+			width: 12px;
+			height: 12px;
+			background: url("../img/icon/next.svg") center center / cover no-repeat;
+			transform: rotate(90deg);
+		}
+	}
+}

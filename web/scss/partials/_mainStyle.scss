@@ -1,0 +1,61 @@
+$mainBlue: #62ccfe;
+$textShadowBlue: #bde0f4;
+$lightBlue: #d6e7f0;
+$darkFont: #333333;
+$darkBlueFont: #2c5b72;
+
+body {
+	overflow-x: hidden;
+}
+
+.btn {
+	height: 50px;
+	line-height: 50px;
+	border-radius: 25px;
+	color: #fff;
+	padding: 0 25px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	box-sizing: border-box;
+	&.blue {
+		background: $mainBlue;
+		font-family: "SegoeUIBold", sans-serif;
+		font-size: 18px;
+	}
+	&.transparent {
+		background: none;
+		border: 1px solid rgba(#fff, .5);
+		font-family: "SegoeUIRegular", sans-serif;
+		font-size: 16px;
+	}
+	&.darkGray {
+		height: 40px;
+		line-height: 40px;
+		background: $darkFont;
+		color: $mainBlue;
+		font-family: "SegoeUISemiBold", sans-serif;
+		font-size: 14px;
+	}
+	&.circle {
+		width: 80px;
+		height: 80px;
+		padding: 10px 0;
+		background: $mainBlue;
+		border-radius: 50%;
+		line-height: 30px;
+		font-family: "SegoeUIBold", sans-serif;
+		font-size: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		transition: all .2s linear;
+		&:hover {
+			background: #292829;
+		}
+	}
+	&.big {
+		height: 110px;
+		width: 110px;
+		padding: 25px 10px;
+		box-shadow: 0 0 10px 2px rgba($darkFont, .2);
+	}
+}

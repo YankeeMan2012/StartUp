@@ -1,0 +1,129 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 75px;
+	width: 100%;
+	border-bottom: 1px solid #999999;
+	font-family: "SegoeUIRegular", sans-serif;
+	font-size: 16px;
+	color: #fff;
+	z-index: 20;
+	transform: translateY(-75px);
+	opacity: 0;
+	.hamburger {
+		display: none;
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		margin-top: -9px;
+		li {
+			height: 2px;
+			width: 100%;
+			background: #fff;
+			position: absolute;
+			left: 0;
+			transition: all .5s linear;
+			&:first-child {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: calc(50% - 1px);
+			}
+			&:last-child {
+				bottom: 0;
+			}
+		}
+		&.active {
+			li:first-child {
+				width: 24px;
+				top: 8px;
+				transform: rotate(45deg);
+			}
+			li:nth-child(2) {
+				display: none;
+			}
+			li:last-child {
+				width: 24px;
+				bottom: 8px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	.menu {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		li {
+			padding: 10px;
+			box-sizing: border-box;
+			cursor: pointer;
+			letter-spacing: .03em;
+			&.active {
+				font-family: "SegoeUISemiBold", sans-serif;
+				color: $mainBlue;
+			}
+		}
+		.openingMenu {
+			padding-right: 30px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 14px;
+				right: 10px;
+				width: 12px;
+				height: 12px;
+				background: url("../img/icon/next.svg") center center / cover no-repeat;
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.links {
+		position: absolute;
+		top: 50%;
+		margin-top: -9px;
+		right: 30px;
+		display: flex;
+		flex-direction: row;
+		a {
+			width: 18px;
+			height: 18px;
+			display: block;
+			margin-left: 12px;
+		}
+		.ig {
+			background: url("../img/icon/ig.svg") center center / cover no-repeat;
+		}
+		.tw {
+			background: url("../img/icon/tw.svg") center center / cover no-repeat;
+		}
+		.fb {
+			margin-left: 8px;
+			background: url("../img/icon/fb.svg") center center / cover no-repeat;
+		}
+	}
+	&.headerBack {
+		background: #292829;
+		border: none;
+	}
+	&.animate {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	header {
+		.hamburger {
+			display: block;
+		}
+		.menu {
+			display: none;
+		}
+	}
+}
