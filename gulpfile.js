@@ -1,5 +1,5 @@
 var gulp         = require('gulp');
-// var minifyCss    = require('gulp-minify-css');
+var minifyCss    = require('gulp-minify-css');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps   = require('gulp-sourcemaps');
@@ -10,7 +10,7 @@ gulp.task('style', function(){
        // .pipe(sourcemaps.init())
        .pipe(sass().on('error', sass.logError))
        .pipe(autoprefixer('last 4 versions'))
-       // .pipe(minifyCss())
+       .pipe(minifyCss())
        // .pipe(sourcemaps.write())
        .pipe(gulp.dest('web/css'))
 });
