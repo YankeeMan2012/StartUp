@@ -5,7 +5,7 @@ header, footer, .viewContent {
 .openMenu {
 	overflow: hidden;
 	header, footer, .viewContent {
-		transform: translateX(360px);
+		transform: translateX(200px);
 	}
 	.overlay {
 		display: block;
@@ -25,14 +25,14 @@ header, footer, .viewContent {
 	z-index: 50;
 }
 .menuList {
-	transform: translateX(-360px);
+	transform: translateX(-200px);
 	transition: transform .3s linear;
 	z-index: 60;
 	display: block;
 	font-family: "SegoeUIRegular", sans-serif;
 	font-size: 16px;
 	position: fixed;
-	width: 360px;
+	width: 200px;
 	box-sizing: border-box;
 	padding: 40px 0;
 	left: 0;

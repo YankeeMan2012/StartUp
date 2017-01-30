@@ -250,7 +250,7 @@ header {
 
 section {
   width: 100%;
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   position: relative; }
 
 @-webkit-keyframes scroll {
@@ -270,7 +270,7 @@ section {
     bottom: 20px; } }
 
 .s1 {
-  height: 100vh;
+  min-height: 100vh;
   background: url("../img/section_1_back.jpg") center center/cover no-repeat;
   box-sizing: border-box;
   display: -webkit-flex;
@@ -418,7 +418,7 @@ section {
   .s2 .rightCol {
     width: 50%;
     box-sizing: border-box;
-    padding: 45px 95px 20px;
+    padding: 45px 95px 160px;
     background: #d6e7f0;
     font-family: "SegoeUIRegular", sans-serif;
     font-size: 16px;
@@ -688,7 +688,7 @@ section {
 
 .s5 {
   background: #fff;
-  height: auto;
+  min-height: unset;
   padding: 30px;
   box-sizing: border-box;
   color: #333333; }
@@ -846,6 +846,7 @@ section {
     opacity: 1 !important; }
 
 .s7 {
+  min-height: unset;
   padding: 50px 10px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1051,17 +1052,27 @@ section {
       height: 50px; }
       .s9 .priceTable .row .cell {
         height: 100%;
-        line-height: 50px;
         text-align: center;
         margin: 0 15px;
         width: 20%;
-        box-sizing: border-box; }
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
         .s9 .priceTable .row .cell:first-child {
+          -webkit-justify-content: flex-start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
           text-align: left;
           width: 40%; }
         .s9 .priceTable .row .cell span {
           display: block;
-          height: 100%;
           position: relative;
           opacity: 0; }
         .s9 .priceTable .row .cell .btn {
@@ -1123,8 +1134,6 @@ section {
     .s9 .priceTable .row:not(.noLine) .cell {
       padding: 0 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-      .s9 .priceTable .row:not(.noLine) .cell span {
-        line-height: 50px; }
   .s9 .row:nth-child(1) .cell span:not(.btn) {
     transition: all 0.3s ease-out 0.2s; }
   .s9 .row:nth-child(2) .cell span:not(.btn) {
@@ -1260,13 +1269,13 @@ section {
     opacity: 1 !important; }
 
 .s11 {
+  min-height: unset;
   box-sizing: border-box;
   padding: 50px 20px 15px;
   font-family: "SegoeUIRegular", sans-serif;
   color: #333333;
   font-size: 16px;
   background: url("../img/section_11_back.jpg") center center/cover no-repeat;
-  height: auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1407,7 +1416,8 @@ section {
           justify-content: space-between;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  height: calc(100vh - 75px); }
   .s12 .contacts {
     width: 50%;
     height: 100%;
@@ -1543,9 +1553,9 @@ header, footer, .viewContent {
 .openMenu {
   overflow: hidden; }
   .openMenu header, .openMenu footer, .openMenu .viewContent {
-    -webkit-transform: translateX(360px);
-        -ms-transform: translateX(360px);
-            transform: translateX(360px); }
+    -webkit-transform: translateX(200px);
+        -ms-transform: translateX(200px);
+            transform: translateX(200px); }
   .openMenu .overlay {
     display: block; }
   .openMenu .menuList {
@@ -1564,9 +1574,9 @@ header, footer, .viewContent {
   z-index: 50; }
 
 .menuList {
-  -webkit-transform: translateX(-360px);
-      -ms-transform: translateX(-360px);
-          transform: translateX(-360px);
+  -webkit-transform: translateX(-200px);
+      -ms-transform: translateX(-200px);
+          transform: translateX(-200px);
   transition: -webkit-transform .3s linear;
   transition: transform .3s linear;
   transition: transform .3s linear, -webkit-transform .3s linear;
@@ -1575,7 +1585,7 @@ header, footer, .viewContent {
   font-family: "SegoeUIRegular", sans-serif;
   font-size: 16px;
   position: fixed;
-  width: 360px;
+  width: 200px;
   box-sizing: border-box;
   padding: 40px 0;
   left: 0;
@@ -1604,3 +1614,324 @@ header, footer, .viewContent {
       -webkit-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
               transform: rotate(90deg); }
+
+@media screen and (max-width: 1000px) {
+  .s1 {
+    padding: 75px 15px 30px 15px; }
+    .s1 .slide {
+      padding: 0 40px 70px 40px; }
+      .s1 .slide img {
+        height: auto;
+        width: 80%; }
+      .s1 .slide .description {
+        width: auto;
+        margin: 15px auto 15px; }
+    .s1 .firstSectionSliderNext {
+      right: 0; }
+    .s1 .firstSectionSliderPrev {
+      left: 0; }
+  .s2 .leftCol {
+    background: url("../img/section_2_photo.jpg") center right/cover no-repeat; }
+  .s2 .rightCol {
+    padding: 45px 40px 160px; }
+  .s6 .leftCol {
+    width: 40%; }
+  .s6 .rightCol {
+    width: 60%; }
+  .s8 {
+    height: auto; }
+    .s8 .teamSlider .slide {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      .s8 .teamSlider .slide .person {
+        width: 50%; }
+        .s8 .teamSlider .slide .person .avatar {
+          height: 45vh;
+          width: 100%; }
+  .s9 {
+    padding: 50px 20px; }
+  .s10 {
+    height: auto; }
+    .s10 .lastNews {
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      .s10 .lastNews .new {
+        width: 100%;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row; }
+        .s10 .lastNews .new .poster {
+          width: 35%;
+          height: 100%; }
+        .s10 .lastNews .new .info {
+          width: 65%; }
+  .s11 .writeUs {
+    padding: 30px; } }
+
+@media screen and (max-width: 800px) {
+  .s1 .slide img {
+    height: auto;
+    width: 100%; }
+  .s2 {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .s2 .leftCol {
+      width: 100%;
+      height: 400px;
+      background: url("../img/section_2_photo.jpg") top center/cover no-repeat; }
+    .s2 .rightCol {
+      width: 100%;
+      padding: 45px 35px 160px; }
+  .s3 .serviceList {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .s3 .serviceList li {
+      width: 50%; }
+  .s6 {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .s6 .leftCol {
+      height: 300px;
+      width: 100%; }
+    .s6 .rightCol {
+      width: 100%; }
+      .s6 .rightCol .description {
+        height: 260px;
+        padding: 25px; }
+        .s6 .rightCol .description .btnBox {
+          top: 0;
+          left: auto;
+          right: 100px; }
+        .s6 .rightCol .description.second .btnBox {
+          left: auto;
+          right: 0;
+          top: 50%; }
+        .s6 .rightCol .description.third .btnBox {
+          top: 50%;
+          left: 0; }
+  .s8 .teamSlider .slide .person .avatar {
+    height: 400px; }
+  .s9 .priceTable {
+    width: 100%;
+    opacity: 0;
+    transition: all .5s ease-out .3s; }
+    .s9 .priceTable .row {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 50px; }
+      .s9 .priceTable .row .cell .selected:before {
+        width: 10px;
+        height: 10px; }
+      .s9 .priceTable .row .cell .transparent {
+        padding: 0 5px;
+        width: 100%; }
+      .s9 .priceTable .row .cell .animate {
+        width: 100%; }
+    .s9 .priceTable .row:first-child {
+      height: 40px; }
+      .s9 .priceTable .row:first-child .cell span {
+        line-height: 40px;
+        font-size: 16px;
+        font-family: "SegoeUIBold", sans-serif; }
+      .s9 .priceTable .row:first-child .cell .btn {
+        height: 40px;
+        width: 40px; }
+    .s9 .priceTable .row:nth-child(2) .cell span {
+      line-height: 40px;
+      font-size: 20px; }
+    .s9 .priceTable .row:nth-child(2) .cell .currency {
+      font-size: 12px; }
+    .s9 .priceTable .row:not(.noLine) .cell {
+      padding: 0 10px; }
+  .s12 {
+    height: auto;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .s12 .contacts {
+      width: 100%;
+      min-height: 550px;
+      padding: 30px 10px 25px; }
+    .s12 .map {
+      width: 100%;
+      height: 500px; } }
+
+@media screen and (max-width: 600px) {
+  .s4 .description {
+    width: auto; }
+  .s4 .commentSlider {
+    width: 100%; }
+    .s4 .commentSlider .slide .slideWrapper {
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .s4 .commentSlider .slide .slideWrapper .avatar {
+        margin: 20px 0; }
+      .s4 .commentSlider .slide .slideWrapper .comment {
+        padding: 0 15px 10px;
+        box-sizing: border-box;
+        -webkit-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+                transform: translateY(-200px); }
+  .s5 .description {
+    width: 100%; }
+  .s6 .rightCol .description .btnBox {
+    right: 30px; }
+  .s8 .teamSlider .slide {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .s8 .teamSlider .slide .person .avatar {
+      height: 250px; }
+  .s9 {
+    padding: 50px 0; }
+    .s9 .priceTable {
+      padding: 10px 0 20px; }
+      .s9 .priceTable .row {
+        height: 70px; }
+        .s9 .priceTable .row .cell {
+          margin: 0 5px; }
+          .s9 .priceTable .row .cell:first-child {
+            min-width: 120px;
+            width: 120px; }
+            .s9 .priceTable .row .cell:first-child span {
+              font-size: 12px;
+              line-height: 14px; }
+        .s9 .priceTable .row:first-child .cell {
+          width: 100%; }
+          .s9 .priceTable .row:first-child .cell span {
+            font-size: 12px; }
+  .s10 .description {
+    width: auto; }
+  .s10 .lastNews .new {
+    width: 100%;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .s10 .lastNews .new .poster {
+      height: 250px;
+      width: 100%; }
+    .s10 .lastNews .new .info {
+      width: 100%; }
+  .s11 {
+    padding: 30px 10px 15px; }
+    .s11 .writeUs {
+      padding: 32px 10px; }
+      .s11 .writeUs .formWrap {
+        height: 420px;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+      .s11 .writeUs .leftCol {
+        width: 100%;
+        height: 50%; }
+      .s11 .writeUs .rightCol {
+        width: 100%;
+        height: 50%; } }
+
+@media screen and (max-width: 500px) {
+  .s6 .rightCol .description {
+    padding: 20px 15px 15px 15px !important;
+    height: auto; }
+    .s6 .rightCol .description .btnBox {
+      top: 0;
+      right: 20px; }
+      .s6 .rightCol .description .btnBox .big {
+        width: 90px;
+        height: 90px;
+        line-height: 32px;
+        box-sizing: border-box;
+        padding: 10px;
+        margin-top: -15px;
+        margin-left: -35px; }
+    .s6 .rightCol .description .text {
+      padding: 10px 0; }
+    .s6 .rightCol .description.second .btnBox {
+      right: 20%;
+      left: auto;
+      top: 0; }
+    .s6 .rightCol .description.third .btnBox {
+      right: auto;
+      left: 80%;
+      top: 0; }
+  .s6 .rightCol .prodBox {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .s6 .rightCol .prodBox .photo {
+      width: 100%;
+      height: 300px; }
+    .s6 .rightCol .prodBox .description, .s6 .rightCol .prodBox .descriptionWrapper {
+      width: 100%; }
+    .s6 .rightCol .prodBox.prodSecond .photo {
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+    .s6 .rightCol .prodBox.prodSecond .description {
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+  .s8 .description {
+    width: auto; }
+  .s8 .teamSlider .slide {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .s8 .teamSlider .slide .person {
+      width: 100%;
+      padding: 20px 5px 0; }
+      .s8 .teamSlider .slide .person .avatar {
+        height: 350px; } }
+
+@media screen and (max-width: 400px) {
+  .s1 .slide {
+    padding-top: 10px; }
+  .s2 .rightCol {
+    padding: 45px 15px 160px; }
+  .s3 .serviceList {
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .s3 .serviceList li {
+      width: 100%;
+      padding-top: 20px; }
+      .s3 .serviceList li .icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px; }
+  .s4 {
+    padding: 30px 15px 40px; }
+    .s4 .commentSlider .slide .slideWrapper .avatar {
+      min-width: 200px;
+      min-height: 200px;
+      width: 200px;
+      height: auto; }
+  .s9 .priceTable .row:nth-child(2) {
+    height: 40px; }
+    .s9 .priceTable .row:nth-child(2) .cell span {
+      font-size: 16px; }
+  .s10 {
+    padding: 20px 0; }
+    .s10 .description {
+      padding: 0 10px; } }
