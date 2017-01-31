@@ -14,17 +14,13 @@ var AppJS = {
         $('.hamburger').on('click', function()  { AppJS.openMenu( $(this) ); });
         $('.overlay').on('click', function()    { AppJS.closeMenu();         });
         window.onresize = function ()           { AppJS.windowResize();      };
-        window.onscroll = function ()           { AppJS.windowScroll();      };
+        $(window).on('scroll', function ()      { AppJS.pageAnimate();       });
     },
 
     windowResize: function () {
         if (window.innerWidth > 1000) {
             AppJS.closeMenu();
         }
-    },
-
-    windowScroll: function () {
-        AppJS.pageAnimate();
     },
 
     openMenu: function (menuBtn) {
@@ -128,9 +124,10 @@ var AppJS = {
     },
 
     pageAnimate: function () {
-        var scroll = $('body').scrollTop();
-        var winH = window.innerWidth;
+        var scroll = window.pageYOffset;
+        var winH = $(window).width();
         var header = $('header');
+
         var s1 = $('.s1');
         var s2 = $('.s2');
         var s3 = $('.s3');
@@ -155,7 +152,7 @@ var AppJS = {
         if (scroll < 20) {
             header.removeClass('headerBack');
         }
-        
+
         if (scroll >= 0) {
             header.add(s1).addClass('animate');
         }

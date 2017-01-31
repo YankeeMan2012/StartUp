@@ -4,6 +4,9 @@ header, footer, .viewContent {
 
 .openMenu {
 	overflow: hidden;
+	.viewContent {
+		overflow: hidden;
+	}
 	header, footer, .viewContent {
 		transform: translateX(200px);
 	}

@@ -4,7 +4,7 @@ $lightBlue: #d6e7f0;
 $darkFont: #333333;
 $darkBlueFont: #2c5b72;
 
-body {
+body, .viewContent {
 	overflow-x: hidden;
 }
 
@@ -21,6 +21,10 @@ body {
 		background: $mainBlue;
 		font-family: "SegoeUIBold", sans-serif;
 		font-size: 18px;
+		transition: all .2s linear;
+		&:hover {
+			background: #292829;
+		}
 	}
 	&.transparent {
 		background: none;
@@ -35,6 +39,11 @@ body {
 		color: $mainBlue;
 		font-family: "SegoeUISemiBold", sans-serif;
 		font-size: 14px;
+		transition: all .2s linear;
+		&:hover {
+			background: $mainBlue;
+			color: #fff;
+		}
 	}
 	&.circle {
 		width: 80px;

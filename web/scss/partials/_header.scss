@@ -95,16 +95,31 @@ header {
 			height: 18px;
 			display: block;
 			margin-left: 12px;
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			transition: all .1s linear;
+			&:hover {
+				&.ig {
+					background-image: url("../img/icon/igBlue.svg");
+				}
+				&.tw {
+					background-image: url("../img/icon/twBlue.svg");
+				}
+				&.fb {
+					background-image: url("../img/icon/fbBlue.svg");
+				}
+			}
 		}
 		.ig {
-			background: url("../img/icon/ig.svg") center center / cover no-repeat;
+			background-image: url("../img/icon/ig.svg");
 		}
 		.tw {
-			background: url("../img/icon/tw.svg") center center / cover no-repeat;
+			background-image: url("../img/icon/tw.svg");
 		}
 		.fb {
 			margin-left: 8px;
-			background: url("../img/icon/fb.svg") center center / cover no-repeat;
+			background-image: url("../img/icon/fb.svg");
 		}
 	}
 	&.headerBack {
